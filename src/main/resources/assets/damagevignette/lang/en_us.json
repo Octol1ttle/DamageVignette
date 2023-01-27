@@ -1,0 +1,5 @@
+{
+    "config.damagevignette.title": "Damage Vignette Settings",
+    "config.damagevignette.minthreshold": "0% intensity threshold (in damage%)",
+    "config.damagevignette.maxthreshold": "100% intensity threshold (in damage%)"
+}

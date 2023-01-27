@@ -15,6 +15,9 @@
   "entrypoints": {
     "client": [
       "ru.octol1ttle.damagevignette.client.DamageVignette"
+    ],
+    "modmenu": [
+      "ru.octol1ttle.damagevignette.client.DamageVignetteModMenuImpl"
     ]
   },
   "mixins": [
