@@ -6,7 +6,9 @@
   "mixins": [
   ],
   "client": [
-    "InGameHudMixin"
+    "InGameHudMixin",
+    "compat.IrisDeferredWorldRenderingPipelineMixin",
+    "compat.IrisNewWorldRenderingPipelineMixin"
   ],
   "injectors": {
     "defaultRequire": 1

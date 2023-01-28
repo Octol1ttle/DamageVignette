@@ -10,6 +10,7 @@ import net.fabricmc.api.Environment;
 
 @Environment(EnvType.CLIENT)
 public class DamageVignette implements ClientModInitializer {
+    public static float curOpacity;
     @Override
     public void onInitializeClient() {
         try (Reader reader = new FileReader("config/damagevignette.json")) {
