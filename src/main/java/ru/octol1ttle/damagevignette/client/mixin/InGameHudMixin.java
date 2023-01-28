@@ -22,10 +22,10 @@ public abstract class InGameHudMixin {
     @ModifyConstant(method = "renderVignetteOverlay", constant = @Constant(floatValue = 0.0f, ordinal = 0))
     private float healthVignetteOverlay(float f) {
         LivingEntity entity = (LivingEntity) client.getCameraEntity();
-        float hpScaled = entity.getHealth() / entity.getMaxHealth();
-        float confMin = MathHelper.clamp(DamageVignetteConfig.CONFIG.minThreshold / 100.0f, 0.0f, DamageVignetteConfig.CONFIG.maxThreshold / 100.0f);
-        float confMax = MathHelper.clamp(DamageVignetteConfig.CONFIG.maxThreshold / 100.0f, confMin, 1.0f);
-        DamageVignette.curOpacity = 1.0f - (hpScaled * (confMax - confMin) + confMin);
+        float hpScaled = entity.getHealth() / entity.getMaxHealth() * 100.0f;
+        float confLow = MathHelper.clamp(DamageVignetteConfig.CONFIG.lowThreshold, 0.0f, DamageVignetteConfig.CONFIG.highThreshold);
+        float confHigh = MathHelper.clamp(DamageVignetteConfig.CONFIG.highThreshold, confLow, 100.0f);
+        DamageVignette.curOpacity = (confHigh - hpScaled) / (confHigh - confLow);
         return MathHelper.clamp(DamageVignette.curOpacity, 0.0f, 1.0f);
     }
 }

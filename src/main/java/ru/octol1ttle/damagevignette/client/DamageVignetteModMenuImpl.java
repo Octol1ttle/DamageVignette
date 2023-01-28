@@ -34,14 +34,14 @@ public class DamageVignetteModMenuImpl implements ModMenuApi {
             ConfigCategory category = builder.getOrCreateCategory(Text.of(""));
             ConfigEntryBuilder entryBuilder = builder.entryBuilder();
 
-            category.addEntry(entryBuilder.startIntSlider(Text.translatable("config.damagevignette.minthreshold"), CONFIG.minThreshold, 0, 100)
+            category.addEntry(entryBuilder.startIntSlider(Text.translatable("config.damagevignette.lowthreshold"), CONFIG.lowThreshold, 0, 100)
                     .setDefaultValue(0)
-                    .setSaveConsumer(newValue -> CONFIG.minThreshold = newValue)
+                    .setSaveConsumer(newValue -> CONFIG.lowThreshold = newValue)
                     .build());
 
-            category.addEntry(entryBuilder.startIntSlider(Text.translatable("config.damagevignette.maxthreshold"), CONFIG.maxThreshold, 0, 100)
+            category.addEntry(entryBuilder.startIntSlider(Text.translatable("config.damagevignette.highthreshold"), CONFIG.highThreshold, 0, 100)
                     .setDefaultValue(100)
-                    .setSaveConsumer(newValue -> CONFIG.maxThreshold = newValue)
+                    .setSaveConsumer(newValue -> CONFIG.highThreshold = newValue)
                     .build());
             return builder.build();
         };

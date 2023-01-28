@@ -11,8 +11,8 @@ import ru.octol1ttle.damagevignette.client.DamageVignette;
 @Pseudo
 public class IrisNewWorldRenderingPipelineMixin {
 
-    @Inject(method = "shouldRenderVignette", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "shouldRenderVignette", at = @At("RETURN"), cancellable = true)
     public void forceVignetteRendering(CallbackInfoReturnable<Boolean> cir) {
-        cir.setReturnValue(cir.getReturnValue() || DamageVignette.curOpacity > 0.0f);
+        cir.setReturnValue(cir.getReturnValueZ() || DamageVignette.curOpacity > 0.0f);
     }
 }

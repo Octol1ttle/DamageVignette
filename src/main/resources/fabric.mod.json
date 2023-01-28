@@ -11,6 +11,7 @@
     "repo": "https://github.com/Octol1ttle/DamageVignette-Fabric"
   },
   "license": "MIT",
+  "icon": "assets/damagevignette/icon.png",
   "environment": "client",
   "entrypoints": {
     "client": [
