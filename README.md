@@ -16,7 +16,7 @@ This mod will show a red vignette effect when your HP gets low to alert you. Tha
 
 You can define health thresholds for vignette intensity if you have Cloth Config and Mod Menu installed. Compatible with Iris Shaders.
 
-**Note: Please make sure your graphics settings allow vignette to be displayed! With Sodium, it is a separate option that you need to enable, otherwise set your graphics to "Fancy"**
+### Note: Please make sure your graphics settings allow vignette to be displayed! With Sodium, it is a separate option that you need to enable, otherwise set your graphics to "Fancy"
 
 ## Downloads ![Modrinth Total Downloads](https://img.shields.io/modrinth/dt/damagevignette?logo=modrinth)
 
