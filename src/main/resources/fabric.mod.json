@@ -8,7 +8,9 @@
     "Octol1ttle"
   ],
   "contact": {
-    "repo": "https://github.com/Octol1ttle/DamageVignette-Fabric"
+    "homepage": "https://github.com/Octol1ttle/DamageVignette-Fabric",  
+    "sources": "https://github.com/Octol1ttle/DamageVignette-Fabric",
+    "issues": "https://github.com/Octol1ttle/DamageVignette-Fabric/issues"
   },
   "license": "MIT",
   "icon": "assets/damagevignette/icon.png",
