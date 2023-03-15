@@ -8,7 +8,7 @@
     "Octol1ttle"
   ],
   "contact": {
-    "homepage": "https://github.com/Octol1ttle/DamageVignette-Fabric",  
+    "homepage": "https://github.com/Octol1ttle/DamageVignette-Fabric",
     "sources": "https://github.com/Octol1ttle/DamageVignette-Fabric",
     "issues": "https://github.com/Octol1ttle/DamageVignette-Fabric/issues"
   },
@@ -16,6 +16,9 @@
   "icon": "assets/damagevignette/icon.png",
   "environment": "client",
   "entrypoints": {
+    "preLaunch": [
+      "ru.octol1ttle.damagevignette.client.DamageVignettePreLaunch"
+    ],
     "client": [
       "ru.octol1ttle.damagevignette.client.DamageVignette"
     ],
@@ -28,6 +31,6 @@
   ],
   "depends": {
     "fabricloader": ">=0.14.10",
-    "minecraft": ">=1.19"
+    "minecraft": "1.19.4"
   }
 }

@@ -4,14 +4,15 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigCategory;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.Text;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 
 import static ru.octol1ttle.damagevignette.client.DamageVignetteConfig.CONFIG;
 
@@ -33,6 +34,11 @@ public class DamageVignetteModMenuImpl implements ModMenuApi {
 
             ConfigCategory category = builder.getOrCreateCategory(Text.of(""));
             ConfigEntryBuilder entryBuilder = builder.entryBuilder();
+
+            category.addEntry(entryBuilder.startBooleanToggle(Text.translatable("config.damagevignette.enabled"), CONFIG.enabled)
+                    .setDefaultValue(true)
+                    .setSaveConsumer(newValue -> CONFIG.enabled = newValue)
+                    .build());
 
             category.addEntry(entryBuilder.startIntSlider(Text.translatable("config.damagevignette.lowthreshold"), CONFIG.lowThreshold, 0, 100)
                     .setDefaultValue(0)
