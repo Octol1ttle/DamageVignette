@@ -33,6 +33,6 @@ public abstract class InGameHudMixin {
 
     @ModifyConstant(method = "renderVignetteOverlay", constant = @Constant(floatValue = 0.0f, ordinal = 0))
     private float healthVignetteOverlay(float f) {
-        return MathHelper.clamp(DamageVignette.curOpacity, 0.0f, 1.0f);
+        return DamageVignetteConfig.CONFIG.enabled ? MathHelper.clamp(DamageVignette.curOpacity, 0.0f, 1.0f) : f;
     }
 }
