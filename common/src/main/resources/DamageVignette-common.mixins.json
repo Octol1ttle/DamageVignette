@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "ru.octol1ttle.damagevignette.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [],
+  "client": [
+    "ForgeVanillaGuiOverlayMixin",
+    "GuiMixin",
+    "compat.IrisDeferredWorldRenderingPipelineMixin",
+    "compat.IrisNewWorldRenderingPipelineMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
