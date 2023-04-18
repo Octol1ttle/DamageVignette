@@ -1,0 +1,16 @@
+package ru.octol1ttle.damagevignette.mixin.compat;
+
+import com.llamalad7.mixinextras.injector.ModifyReturnValue;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Pseudo;
+import org.spongepowered.asm.mixin.injection.At;
+import ru.octol1ttle.damagevignette.DamageVignette;
+
+@Mixin(targets = "net.coderbot.iris.pipeline.DeferredWorldRenderingPipeline", remap = false)
+@Pseudo
+public class IrisDeferredWorldRenderingPipelineMixin {
+    @ModifyReturnValue(method = "shouldRenderVignette", at = @At("RETURN"))
+    public boolean forceVignetteRendering(boolean original) {
+        return original || DamageVignette.curOpacity > 0.0f;
+    }
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "damagevignette",
+  "version": "${version}",
+  "name": "DamageVignette",
+  "description": "Adds an overlay (similar to getting close to world border) when low on health.",
+  "authors": [
+    "Octol1ttle"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/damagevignette",
+    "sources": "https://github.com/Octol1ttle/DamageVignette",
+    "issues": "https://github.com/Octol1ttle/DamageVignette/issues"
+  },
+  "license": "MIT",
+  "icon": "icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "ru.octol1ttle.damagevignette.fabric.DamageVignetteFabric"
+    ],
+    "modmenu": [
+      "ru.octol1ttle.damagevignette.fabric.DamageVignetteModMenuImpl"
+    ]
+  },
+  "mixins": [
+    "DamageVignette-common.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.11",
+    "minecraft": ">=1.19.4"
+  }
+}
