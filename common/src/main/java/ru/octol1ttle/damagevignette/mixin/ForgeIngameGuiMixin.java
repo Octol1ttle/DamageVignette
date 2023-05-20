@@ -7,9 +7,9 @@ import org.spongepowered.asm.mixin.Pseudo;
 import org.spongepowered.asm.mixin.injection.At;
 import ru.octol1ttle.damagevignette.DamageVignette;
 
-@Mixin(targets = "net.minecraftforge.client.gui.overlay.VanillaGuiOverlay")
+@Mixin(targets = "net.minecraftforge.client.gui.ForgeIngameGui")
 @Pseudo
-public class ForgeVanillaGuiOverlayMixin {
+public class ForgeIngameGuiMixin {
     @ModifyExpressionValue(method = "lambda$static$0", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/Minecraft;useFancyGraphics()Z"))
     private static boolean forceRenderDamageVignette(boolean vignetteAllowed) {
         return DamageVignette.shouldRenderVignette(Minecraft.getInstance(), vignetteAllowed);

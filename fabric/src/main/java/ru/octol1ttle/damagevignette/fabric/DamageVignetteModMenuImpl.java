@@ -8,7 +8,8 @@ import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigCategory;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 import net.minecraft.client.Minecraft;
-import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.TranslatableComponent;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -22,7 +23,7 @@ public class DamageVignetteModMenuImpl implements ModMenuApi {
         return parent -> {
             ConfigBuilder builder = ConfigBuilder.create()
                     .setParentScreen(Minecraft.getInstance().screen)
-                    .setTitle(Component.translatable("config.damagevignette.title"))
+                    .setTitle(new TranslatableComponent("config.damagevignette.title"))
                     .setSavingRunnable(() -> {
                         try (Writer writer = new FileWriter("config/damagevignette.json")) {
                             Gson gson = new GsonBuilder().create();
@@ -32,20 +33,20 @@ public class DamageVignetteModMenuImpl implements ModMenuApi {
                         }
                     });
 
-            ConfigCategory category = builder.getOrCreateCategory(Component.literal(""));
+            ConfigCategory category = builder.getOrCreateCategory(new TextComponent(""));
             ConfigEntryBuilder entryBuilder = builder.entryBuilder();
 
-            category.addEntry(entryBuilder.startBooleanToggle(Component.translatable("config.damagevignette.enabled"), fabricConfig.enabled)
+            category.addEntry(entryBuilder.startBooleanToggle(new TranslatableComponent("config.damagevignette.enabled"), fabricConfig.enabled)
                     .setDefaultValue(true)
                     .setSaveConsumer(newValue -> fabricConfig.enabled = newValue)
                     .build());
 
-            category.addEntry(entryBuilder.startIntSlider(Component.translatable("config.damagevignette.lowthreshold"), fabricConfig.lowThreshold, 0, 100)
+            category.addEntry(entryBuilder.startIntSlider(new TranslatableComponent("config.damagevignette.lowthreshold"), fabricConfig.lowThreshold, 0, 100)
                     .setDefaultValue(5)
                     .setSaveConsumer(newValue -> fabricConfig.lowThreshold = newValue)
                     .build());
 
-            category.addEntry(entryBuilder.startIntSlider(Component.translatable("config.damagevignette.highthreshold"), fabricConfig.highThreshold, 0, 100)
+            category.addEntry(entryBuilder.startIntSlider(new TranslatableComponent("config.damagevignette.highthreshold"), fabricConfig.highThreshold, 0, 100)
                     .setDefaultValue(100)
                     .setSaveConsumer(newValue -> fabricConfig.highThreshold = newValue)
                     .build());
