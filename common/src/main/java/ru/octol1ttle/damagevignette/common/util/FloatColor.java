@@ -1,4 +1,4 @@
-package ru.octol1ttle.damagevignette.util;
+package ru.octol1ttle.damagevignette.common.util;
 
 import org.apache.commons.lang3.Validate;
 

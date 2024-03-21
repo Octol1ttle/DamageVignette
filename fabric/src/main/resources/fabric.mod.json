@@ -27,6 +27,9 @@
       "ru.octol1ttle.damagevignette.fabric.DamageVignetteFabric"
     ]
   },
+  "mixins": [
+    "damagevignette.mixins.json"
+  ],
   "depends": {
     "fabric": "*",
     "minecraft": ">=1.20.2",

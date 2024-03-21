@@ -1,4 +1,4 @@
-package ru.octol1ttle.damagevignette.config;
+package ru.octol1ttle.damagevignette.common.config;
 
 import com.google.gson.GsonBuilder;
 import dev.isxander.yacl3.config.v2.api.ConfigClassHandler;
@@ -7,7 +7,7 @@ import dev.isxander.yacl3.config.v2.api.serializer.GsonConfigSerializerBuilder;
 import dev.isxander.yacl3.platform.YACLPlatform;
 import java.awt.Color;
 import net.minecraft.util.Identifier;
-import ru.octol1ttle.damagevignette.DamageVignetteCommon;
+import ru.octol1ttle.damagevignette.common.DamageVignetteCommon;
 
 public class DamageVignetteConfig {
     private static final ConfigClassHandler<DamageVignetteConfig> HANDLER = ConfigClassHandler.createBuilder(DamageVignetteConfig.class)

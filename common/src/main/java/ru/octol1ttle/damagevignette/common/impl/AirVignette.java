@@ -1,9 +1,9 @@
-package ru.octol1ttle.damagevignette.impl;
+package ru.octol1ttle.damagevignette.common.impl;
 
 import java.util.function.Supplier;
 import net.minecraft.entity.player.PlayerEntity;
-import ru.octol1ttle.damagevignette.api.Vignette;
-import ru.octol1ttle.damagevignette.config.VignetteSettings;
+import ru.octol1ttle.damagevignette.common.api.Vignette;
+import ru.octol1ttle.damagevignette.common.config.VignetteSettings;
 
 public class AirVignette extends Vignette {
     public AirVignette(Supplier<VignetteSettings> configSupplier) {

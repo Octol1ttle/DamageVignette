@@ -1,4 +1,4 @@
-package ru.octol1ttle.damagevignette.api;
+package ru.octol1ttle.damagevignette.common.api;
 
 import net.minecraft.entity.player.PlayerEntity;
 

@@ -1,4 +1,4 @@
-package ru.octol1ttle.damagevignette.config;
+package ru.octol1ttle.damagevignette.common.config;
 
 import dev.isxander.yacl3.config.v2.api.SerialEntry;
 import java.awt.Color;
@@ -19,6 +19,8 @@ public class VignetteSettings {
     }
 
     public float scale(float strength) {
+        strength = MathHelper.clamp(strength, 0.0f, 1.0f);
+
         float min = MathHelper.clamp(this.minimumStrengthThreshold, 0.0f, maximumStrengthThreshold);
         float max = MathHelper.clamp(this.maximumStrengthThreshold, min, 1.0f);
 
