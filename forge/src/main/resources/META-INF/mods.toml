@@ -11,7 +11,7 @@ authors = "Octol1ttle"
 description = '''
 Adds an overlay (similar to getting close to world border) when low on health.
 '''
-#logoFile = ""
+logoFile = "icon.png"
 
 [[dependencies.damagevignette]]
 modId = "forge"
