@@ -2,7 +2,6 @@ package ru.octol1ttle.damagevignette.common.events;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
-import dev.architectury.event.events.client.ClientGuiEvent;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.render.BufferBuilder;
@@ -16,19 +15,13 @@ import org.jetbrains.annotations.Nullable;
 import org.joml.Matrix4f;
 import ru.octol1ttle.damagevignette.common.DamageVignetteCommon;
 import ru.octol1ttle.damagevignette.common.api.Vignette;
-import ru.octol1ttle.damagevignette.common.config.DamageVignetteConfig;
 import ru.octol1ttle.damagevignette.common.config.VignetteSettings;
 import ru.octol1ttle.damagevignette.common.util.FloatColor;
 
-public class RenderHudEvent implements ClientGuiEvent.RenderHud {
+public class RenderHudEvent {
     private static final Identifier VIGNETTE_TEXTURE = new Identifier("damagevignette", "textures/vignette.png");
 
-    @Override
-    public void renderHud(DrawContext graphics, float tickDelta) {
-        if (!DamageVignetteConfig.get().enabled) {
-            return;
-        }
-
+    public void renderHud(DrawContext graphics) {
         FloatColor color = computeVignetteColor();
         if (color == null) {
             return;

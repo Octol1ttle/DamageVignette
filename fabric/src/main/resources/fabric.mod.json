@@ -3,7 +3,7 @@
   "id": "damagevignette",
   "version": "${version}",
   "name": "DamageVignette",
-  "description": "Adds an overlay (similar to getting close to world border) when low on health.",
+  "description": "Adds a red vignette effect when low on health.",
   "authors": [
     "Octol1ttle"
   ],
@@ -31,9 +31,6 @@
     "damagevignette.mixins.json"
   ],
   "depends": {
-    "fabric": "*",
-    "minecraft": "^1.20.0",
-    "architectury": ">=9.0.6",
-    "yet_another_config_lib_v3": "*"
+    "minecraft": "^1.20.0"
   }
 }

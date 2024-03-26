@@ -8,12 +8,9 @@ import ru.octol1ttle.damagevignette.common.impl.HealthVignette;
 public class DamageVignetteCommon {
     public static final String MOD_ID = "damagevignette";
     public static final List<Vignette> vignettes = List.of(
-            new HealthVignette(() -> DamageVignetteConfig.get().damageVignette)/*,
-            new HungerVignette(() -> DamageVignetteConfig.get().hungerVignette),
-            new AirVignette(() -> DamageVignetteConfig.get().airVignette)*/
+            new HealthVignette(() -> new DamageVignetteConfig().damageVignette)
     );
 
     public static void init() {
-        DamageVignetteConfig.load();
     }
 }

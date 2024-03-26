@@ -10,8 +10,8 @@ import ru.octol1ttle.damagevignette.common.DamageVignetteEvents;
 
 @Mixin(InGameHud.class)
 public class InGameHudMixin {
-    @Inject(method = "render", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/systems/RenderSystem;enableBlend()V", shift = At.Shift.AFTER, ordinal = 0))
+    @Inject(method = "render", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/systems/RenderSystem;enableBlend()V", shift = At.Shift.AFTER, ordinal = 0, remap = false))
     private void onVignetteRender(DrawContext context, float tickDelta, CallbackInfo ci) {
-        DamageVignetteEvents.RENDER_HUD.renderHud(context, tickDelta);
+        DamageVignetteEvents.RENDER_HUD.renderHud(context);
     }
 }
