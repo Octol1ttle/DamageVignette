@@ -21,7 +21,7 @@ import ru.octol1ttle.damagevignette.common.config.VignetteSettings;
 import ru.octol1ttle.damagevignette.common.util.FloatColor;
 
 public class RenderHudEvent implements ClientGuiEvent.RenderHud {
-    private static final Identifier VIGNETTE_TEXTURE = new Identifier("minecraft", "textures/misc/vignette.png");
+    private static final Identifier VIGNETTE_TEXTURE = new Identifier("damagevignette", "textures/vignette.png");
 
     @Override
     public void renderHud(DrawContext graphics, float tickDelta) {
